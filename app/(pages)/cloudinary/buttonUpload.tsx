@@ -2,11 +2,17 @@
 import { CldUploadWidget } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+interface ResourceInfo {
+	public_id: string;
+	secure_url: string;
 
+	// You can add more properties as needed
+}
 export default function ButtonUpload() {
-	const [resource, setResource] = useState();
+	const [resource, setResource] = useState<ResourceInfo>();
 	const router = useRouter();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (resource?.public_id) {
 			const newUrl = `/cloudinary/${resource.public_id}`;
@@ -29,7 +35,7 @@ export default function ButtonUpload() {
 					maxFiles: 1,
 				}}
 				onSuccess={(result) => {
-					setResource(result?.info); // { public_id, secure_url, etc }
+					setResource(result?.info);
 				}}
 				onQueuesEnd={({ widget }) => {
 					widget?.close();

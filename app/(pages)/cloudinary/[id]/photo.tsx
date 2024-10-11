@@ -10,7 +10,7 @@ const TOPICS: Record<string, string> = {
 	custom: "",
 } as const;
 
-export default function PhotoCloudinary({ id }: { id: string | undefined }) {
+export default function PhotoCloudinary({ id }: { id: string }) {
 	const router = useRouter();
 	const [imageUrl, setImageUrl] = useState(getCldImageUrl({ src: id }));
 	const [loading, setLoading] = useState(false);
