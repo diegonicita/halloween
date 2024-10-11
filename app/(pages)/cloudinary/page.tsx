@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row">
@@ -22,15 +22,8 @@ export default function Home() {
             Your mission is to build something, anything, with Cloudinary that
             fits the theme of “Spooky AI Creation.”
           </p>
-          <Link href="/create" className="btn btn-primary" type="button">
-            Monster Creator
-          </Link>
-          <Link
-            href="/cloudinary"
-            className="btn btn-primary mx-2"
-            type="button"
-          >
-            Cloudinary Test
+          <Link href="" className="btn btn-primary" type="button">
+            Send Image to API
           </Link>
         </div>
       </div>
